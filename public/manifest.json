@@ -4,9 +4,9 @@
     "display": "standalone",
     "scope": "/",
     "start_url": "/",
-    "name": "TELPort",
+    "name": "TELPort Next",
     "short_name": "TELPort",
-    "description": "TELPort",
+    "description": "Next TELPort is Powered by Next.",
     "icons": [
         {
             "src": "/icon-192x192.png",
