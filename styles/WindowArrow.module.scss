@@ -1,0 +1,15 @@
+.windowArrow {
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    top: 1rem;
+    
+    &.leftward {
+        right: 1rem;
+    }
+
+    &.leftward {
+        left: 1rem;
+        transform: rotate(180deg);
+    }
+}
