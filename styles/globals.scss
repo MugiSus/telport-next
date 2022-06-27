@@ -1,0 +1,28 @@
+:root {
+    --color-white: #FEFEFE;
+    --color-green-0: #F9FAFA;
+    --color-green-1: #F0F3F2;
+    --color-green-2: #D5DDDB;
+    --color-green-3: #ABBAB6;
+    --color-green-4: #829993;
+    --color-green-5: #677D78;
+    --color-green-6: #4F635D;
+    --color-green-7: #384944;
+}
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+        Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+* {
+    box-sizing: border-box;
+}

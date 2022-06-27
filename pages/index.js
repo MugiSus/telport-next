@@ -1,5 +1,6 @@
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Home.module.scss'
+// import Window from '../components/Window'
 
 export default function Home() {
     return (
@@ -11,8 +12,22 @@ export default function Home() {
             </Head>
 
             <main className={styles.main}>
-                <div class={styles.callVisualizer} id="call-visual">
-                    <div className={styles.callVisualizerGrid}>
+                <div className={`${styles.window} ${styles.listenerVisualizer}`} id="listner-visual">
+                    <div className={styles.visualizerGrid}>
+                        
+                    </div>
+                </div>
+                <div className={`${styles.window} ${styles.listener}`} id="listner">
+                    
+                </div>
+                <div className={`${styles.window} ${styles.home}`} id="home">
+                    
+                </div>
+                <div className={`${styles.window} ${styles.caller}`} id="caller">
+                    
+                </div>
+                <div className={`${styles.window} ${styles.callerVisualizer}`} id="caller-visual">
+                    <div className={styles.visualizerGrid}>
                         
                     </div>
                 </div>
