@@ -2,7 +2,7 @@
 import styles from "../styles/WindowArrow.module.scss";
 
 const WindowArrow = ({ htmlFor, isLeftward }) => {
-    const clickHandler = () => {
+    const scrollElements = (htmlFor) => {
         if (typeof window !== "undefined") {
             const element = document.getElementById(htmlFor);
             if (element) {
@@ -20,7 +20,7 @@ const WindowArrow = ({ htmlFor, isLeftward }) => {
             src={`./svg/window-arrow.svg`}
             className={`${styles.windowArrow} ${isLeftward ? styles.leftward : styles.rightward}`}
             alt="window-arrow"
-            onClick={clickHandler}
+            onClick={() => scrollElements(htmlFor)}
         />
     )
 }

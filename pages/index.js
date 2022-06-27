@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
+
 import Head from 'next/head'
 import styles from '../styles/Home.module.scss'
 import WindowArrow from '../components/windowArrow.js'
@@ -24,13 +26,12 @@ export default function Home() {
                     
                 </div>
                 <div className={`${styles.window} ${styles.home}`} id="home">
-                    <WindowArrow htmlFor="caller" isLeftward={true} />
-                    <WindowArrow htmlFor="listener" />
                     
                 </div>
                 <div className={`${styles.window} ${styles.caller}`} id="listener">
                     <WindowArrow htmlFor="home" isLeftward={true} />
                     <WindowArrow htmlFor="listener-visual" />
+
                 </div>
                 <div className={`${styles.window} ${styles.callerVisualizer}`} id="listener-visual">
                     <WindowArrow htmlFor="listener" isLeftward={true}/>
