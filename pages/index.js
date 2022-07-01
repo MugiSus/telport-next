@@ -16,6 +16,7 @@ export default function Home() {
             });
         }
     }
+    const scrollIntoThis = event => scrollIntoViewById(event.currentTarget.id);
 
     return (
         <div className={styles.container}>
@@ -26,13 +27,13 @@ export default function Home() {
             </Head>
 
             <main className={styles.main}>
-                <div className={`${styles.window} ${styles.callerVisualizer}`} id="caller-visualizer">
+                <div className={`${styles.window} ${styles.callerVisualizer}`} id="caller-visualizer" onClick={event => scrollIntoViewById(event.currentTarget.id)}>
                     <WindowArrow htmlFor="caller" />
                     <div className={styles.visualizerGrid}>
                         
                     </div>
                 </div>
-                <div className={`${styles.window} ${styles.caller}`} id="caller">
+                <div className={`${styles.window} ${styles.caller}`} id="caller" onClick={scrollIntoThis}>
                     <WindowArrow htmlFor="caller-visualizer" isLeftward={true} />
                     <WindowArrow htmlFor="home" />
                 </div>
@@ -44,12 +45,12 @@ export default function Home() {
                         <img className={styles.linkTitle} src={"./svg/home-listen-title-ja.svg"} alt="listen-title" />
                     </div>
                 </div>
-                <div className={`${styles.window} ${styles.listener}`} id="listener">
+                <div className={`${styles.window} ${styles.listener}`} id="listener" onClick={scrollIntoThis}>
                     <WindowArrow htmlFor="home" isLeftward={true} />
                     <WindowArrow htmlFor="listener-visualizer" />
 
                 </div>
-                <div className={`${styles.window} ${styles.listenerVisualizer}`} id="listener-visualizer">
+                <div className={`${styles.window} ${styles.listenerVisualizer}`} id="listener-visualizer" onClick={scrollIntoThis}>
                     <WindowArrow htmlFor="listener" isLeftward={true}/>
                     <div className={styles.visualizerGrid}>
                         
