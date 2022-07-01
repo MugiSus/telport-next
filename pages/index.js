@@ -38,10 +38,10 @@ export default function Home() {
                 </div>
                 <div className={`${styles.window} ${styles.home}`} id="home">
                     <div className={styles.callerLink} onClick={() => scrollIntoViewById("caller")}>
-                        <img src={"./svg/home-call-title-ja.svg"} alt="call-title" />
+                        <img className={styles.linkTitle} src={"./svg/home-call-title-ja.svg"} alt="call-title" />
                     </div>
                     <div className={styles.listenerLink} onClick={() => scrollIntoViewById("listener")}>
-                        <img src={"./svg/home-listen-title-ja.svg"} alt="listen-title" />
+                        <img className={styles.linkTitle} src={"./svg/home-listen-title-ja.svg"} alt="listen-title" />
                     </div>
                 </div>
                 <div className={`${styles.window} ${styles.listener}`} id="listener">

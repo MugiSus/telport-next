@@ -34,6 +34,10 @@
                 flex-flow: column;
                 align-items: center;
                 justify-content: center;
+
+                .linkTitle {
+                    height: 25%;
+                }
             }
 
             .callerLink {
