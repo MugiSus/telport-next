@@ -1,6 +1,9 @@
 .main {
-    width: 100vw;
-    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-flow: row nowrap;
     overflow-x: scroll;
@@ -8,32 +11,49 @@
     scroll-behavior: smooth;
 
     .window {
-        width: 100%;
         height: 100%;
-        max-width: 80vh;
+        aspect-ratio: 4 / 5;
+        max-width: 100vw;
         position: relative;
         display: flex;
         flex-flow: column;
         flex: none;
         scroll-snap-align: center;
 
-        &.listenerVisualizer {
+        &.callerVisualizer {
             background-color: var(--color-green-0);
         }
         
-        &.listener {
+        &.caller {
             background-color: var(--color-green-1);
         }
         
         &.home {
-            background: linear-gradient(to bottom, var(--color-green-2) 50%, var(--color-green-4) 50%);
+            .callerLink, .listenerLink {
+                display: flex;
+                flex-flow: column;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .callerLink {
+                width: 100%;
+                height: 50%;
+                background-color: var(--color-green-2);
+            }
+
+            .listenerLink {
+                width: 100%;
+                height: 50%;
+                background-color: var(--color-green-4);
+            }
         }
         
-        &.caller {
+        &.listener {
             background-color: var(--color-green-5);
         }
         
-        &.callerVisualizer {
+        &.listenerVisualizer {
             background-color: var(--color-green-6);
         }
     }
