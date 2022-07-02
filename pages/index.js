@@ -6,12 +6,12 @@ import WindowArrow from '../components/windowArrow.js'
 import { useEffect } from 'react'
 
 export default function Home() {
-    const scrollIntoViewById = (htmlFor, behavior = "smooth") => {
+    const scrollIntoViewById = (htmlFor, options) => {
         if (typeof window === "undefined") return;
         const element = document.getElementById(htmlFor);
         if (element) {
             element.scrollIntoView({
-                behavior: behavior || "smooth",
+                behavior: options?.behavior || "smooth",
                 block: "center",
                 inline: "center",
             });
@@ -20,9 +20,7 @@ export default function Home() {
     const scrollIntoThis = event => scrollIntoViewById(event.currentTarget.id);
 
     useEffect(() => {
-        if (typeof window !== "undefined") {
-            scrollIntoViewById("home", "auto");
-        }
+        scrollIntoViewById("home", { behavior: "auto" });
     }, []);
 
     return (
