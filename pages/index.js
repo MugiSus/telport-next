@@ -5,19 +5,14 @@ import styles from '../styles/Home.module.scss'
 import WindowArrow from '../components/windowArrow.js'
 import { useEffect } from 'react'
 
+import { scrollIntoViewById, scrollIntoThis } from '../components/sources/scrollIntoView.js'
+
 export default function Home() {
-    const scrollIntoViewById = (htmlFor, options) => {
-        if (typeof window === "undefined") return;
-        const element = document.getElementById(htmlFor);
-        if (element) {
-            element.scrollIntoView({
-                behavior: options?.behavior || "smooth",
-                block: "center",
-                inline: "center",
-            });
-        }
-    }
-    const scrollIntoThis = event => scrollIntoViewById(event.currentTarget.id);
+
+    const Frequencies = new Uint16Array(
+        [...new Array(128).keys()].map(i => i * 80 + 800)
+    );
+    console.log(Frequencies);
 
     useEffect(() => {
         scrollIntoViewById("home", { behavior: "auto" });
@@ -35,7 +30,13 @@ export default function Home() {
                 <div className={`${styles.window} ${styles.callerVisualizer}`} id="caller-visualizer" onClick={scrollIntoThis}>
                     <WindowArrow htmlFor="caller" />
                     <div className={styles.visualizerGrid}>
-
+                        {
+                            Array.from(Frequencies).map((frequency, index) => (
+                                <div key={index} className={styles.visualizerItem}>
+                                    {frequency}
+                                </div>
+                            ))
+                        }
                     </div>
                 </div>
                 <div className={`${styles.window} ${styles.caller}`} id="caller" onClick={scrollIntoThis}>
@@ -48,8 +49,8 @@ export default function Home() {
                         <img className={styles.linkTitle} src={"./svg/home-call-title-ja.svg"} alt="call-title" />
                         <div className={styles.linkArrowContainer}>
                             {
-                                [...Array(5).keys()].map(i => (
-                                    <img key={i} className={styles.linkArrow} src={"./svg/home-call-arrow.svg"} alt="listen-arrow"/>
+                                [...Array(5).keys()].map(index => (
+                                    <img key={index} className={styles.linkArrow} src={"./svg/home-call-arrow.svg"} alt="listen-arrow"/>
                                 ))
                             }
                         </div>
@@ -59,8 +60,8 @@ export default function Home() {
                         <img className={styles.linkTitle} src={"./svg/home-listen-title-ja.svg"} alt="listen-title" />
                         <div className={styles.linkArrowContainer}>
                             {
-                                [...Array(5).keys()].map(i => (
-                                    <img key={i} className={styles.linkArrow} src={"./svg/home-listen-arrow.svg"} alt="listen-arrow"/>
+                                [...Array(5).keys()].map(index => (
+                                    <img key={index} className={styles.linkArrow} src={"./svg/home-listen-arrow.svg"} alt="listen-arrow"/>
                                 ))
                             }
                         </div>
@@ -73,7 +74,13 @@ export default function Home() {
                 <div className={`${styles.window} ${styles.listenerVisualizer}`} id="listener-visualizer" onClick={scrollIntoThis}>
                     <WindowArrow htmlFor="listener" isLeftward={true}/>
                     <div className={styles.visualizerGrid}>
-                        
+                        {
+                            Array.from(Frequencies).map((frequency, index) => (
+                                <div key={index} className={styles.visualizerItem}>
+                                    {frequency}
+                                </div>
+                            ))
+                        }
                     </div>
                 </div>
             </main>

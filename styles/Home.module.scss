@@ -29,83 +29,7 @@
         }
         
         &.home {
-            .callerLink, .listenerLink {
-                display: flex;
-                flex-flow: column;
-                align-items: center;
-                justify-content: center;
-                gap: 2rem;
-
-                .linkBackgroundIcon {
-                    position: absolute;
-                    height: 25%
-                }
-
-                .linkTitle {
-                    height: 5rem;
-                }
-
-                .linkArrowContainer {
-                    height: 2rem;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    gap: 0.8rem;
-
-                    .linkArrow {
-                        height: 100%;
-                        animation: arrowFlash 3000ms ease-out infinite;
-
-                        &:nth-child(1) {
-                            animation-delay: 0ms;
-                        }
-
-                        &:nth-child(2) {
-                            animation-delay: 100ms;
-                        }
-
-                        &:nth-child(3) {
-                            animation-delay: 200ms;
-                        }
-
-                        &:nth-child(4) {
-                            animation-delay: 300ms;
-                        }
-
-                        &:nth-child(5) {
-                            animation-delay: 400ms;
-                        }
-
-                        @keyframes arrowFlash {
-                            0% {
-                                opacity: 100%;
-                                transform: translateX(-15%);
-                            }
-                            100% {
-                                opacity: 30%;
-                            }
-                        }
-                    }
-                }
-            }
-
-            .callerLink {
-                cursor: pointer;
-                width: 100%;
-                height: 50%;
-                background-color: var(--color-green-2);
-            }
-            
-            .listenerLink {
-                cursor: pointer;
-                width: 100%;
-                height: 50%;
-                background-color: var(--color-green-4);
-
-                .linkArrowContainer {
-                    transform: rotate(180deg);
-                }
-            }
+            background-color: var(--color-green-2);
         }
         
         &.listener {
@@ -116,4 +40,127 @@
             background-color: var(--color-green-6);
         }
     }
+}
+
+.home {
+    .callerLink, .listenerLink {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+
+        .linkBackgroundIcon {
+            position: absolute;
+            height: 25%
+        }
+
+        .linkTitle {
+            height: 5rem;
+        }
+
+        .linkArrowContainer {
+            height: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+
+            .linkArrow {
+                height: 100%;
+                animation: arrowFlash 3000ms ease-out infinite;
+
+                &:nth-child(1) {
+                    animation-delay: 0ms;
+                }
+
+                &:nth-child(2) {
+                    animation-delay: 100ms;
+                }
+
+                &:nth-child(3) {
+                    animation-delay: 200ms;
+                }
+
+                &:nth-child(4) {
+                    animation-delay: 300ms;
+                }
+
+                &:nth-child(5) {
+                    animation-delay: 400ms;
+                }
+
+                @keyframes arrowFlash {
+                    0% {
+                        opacity: 100%;
+                        transform: translateX(-15%);
+                    }
+                    100% {
+                        opacity: 30%;
+                    }
+                }
+            }
+        }
+    }
+
+    .callerLink {
+        cursor: pointer;
+        width: 100%;
+        height: 50%;
+        background-color: var(--color-green-2);
+    }
+    
+    .listenerLink {
+        cursor: pointer;
+        width: 100%;
+        height: 50%;
+        background-color: var(--color-green-4);
+
+        .linkArrowContainer {
+            transform: rotate(180deg);
+        }
+    }
+}
+
+.callerVisualizer, .listenerVisualizer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .visualizerGrid {
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        grid-template-columns: repeat(8, 1fr);
+        gap: 0.4rem;
+        max-height: 90%;
+        overflow-y: scroll;
+        scrollbar-width: none;
+    
+        .visualizerItem {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.4rem;
+            height: 2.4rem;
+            font-size: 0.9rem;
+            border-radius: 10%;
+            font-family: "inconsolata", monospace;
+        }
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+}
+
+
+.callerVisualizer .visualizerItem {
+    background-color: var(--color-green-2);
+    color: var(--color-green-4)
+}
+
+.listenerVisualizer .visualizerItem {
+    background-color: var(--color-green-5);
+    color: var(--color-green-3)
 }
