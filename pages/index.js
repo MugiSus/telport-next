@@ -3,20 +3,27 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.scss'
 import WindowArrow from '../components/windowArrow.js'
+import { useEffect } from 'react'
 
 export default function Home() {
-    const scrollIntoViewById = (htmlFor) => {
+    const scrollIntoViewById = (htmlFor, behavior = "smooth") => {
         if (typeof window === "undefined") return;
         const element = document.getElementById(htmlFor);
         if (element) {
             element.scrollIntoView({
-                behavior: "smooth",
+                behavior: behavior || "smooth",
                 block: "center",
                 inline: "center",
             });
         }
     }
     const scrollIntoThis = event => scrollIntoViewById(event.currentTarget.id);
+
+    useEffect(() => {
+        if (typeof window !== "undefined") {
+            scrollIntoViewById("home", "auto");
+        }
+    }, []);
 
     return (
         <div className={styles.container}>
