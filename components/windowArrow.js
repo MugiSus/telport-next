@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import { execOnce } from "next/dist/shared/lib/utils";
 import styles from "../styles/WindowArrow.module.scss";
 
 const WindowArrow = ({ htmlFor, isLeftward }) => {
@@ -19,7 +20,12 @@ const WindowArrow = ({ htmlFor, isLeftward }) => {
             src={`./svg/window-arrow.svg`}
             className={`${styles.windowArrow} ${isLeftward ? styles.leftward : styles.rightward}`}
             alt="window-arrow"
-            onClick={() => scrollIntoViewById(htmlFor)}
+            onClick={
+                event => {
+                    event.stopPropagation();
+                    scrollIntoViewById(htmlFor);
+                }
+            }
         />
     )
 }
