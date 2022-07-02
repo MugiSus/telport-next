@@ -35,12 +35,12 @@ jobs:
                 name: Build
                 run: yarn build
 
-            # エラーページをルートディレクトリに移動する
-            -
-                name: Move HTTP status code error pages
-                run: |
-                    mv ./out/404/index.html ./out/404.html
-                    mv ./out/418/index.html ./out/418.html
+            # # エラーページをルートディレクトリに移動する
+            # -
+            #     name: Move HTTP status code error pages
+            #     run: |
+            #         mv ./out/404/index.html ./out/404.html
+            #         mv ./out/418/index.html ./out/418.html
 
             # GitHub Pages にデプロイする
             -
@@ -49,4 +49,4 @@ jobs:
                 with:
                     github_token: ${{ secrets.GITHUB_TOKEN }}
                     publish_dir: out
-                    cname: www.mugisus.com
+                    cname: telport.mugisus.com
