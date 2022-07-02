@@ -131,8 +131,9 @@
         display: grid;
         align-items: center;
         justify-content: center;
-        grid-template-columns: repeat(8, 1fr);
-        gap: 0.4rem;
+        grid-template-columns: repeat(auto-fill, 2.4rem);
+        grid-gap: 0.6rem;
+        width: 90%;
         max-height: 90%;
         overflow-y: scroll;
         scrollbar-width: none;
@@ -154,10 +155,9 @@
     }
 }
 
-
 .callerVisualizer .visualizerItem {
-    background-color: var(--color-green-2);
-    color: var(--color-green-4)
+    background-color: var(--color-green-1);
+    color: var(--color-green-3)
 }
 
 .listenerVisualizer .visualizerItem {

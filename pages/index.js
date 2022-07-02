@@ -12,7 +12,6 @@ export default function Home() {
     const Frequencies = new Uint16Array(
         [...new Array(128).keys()].map(i => i * 80 + 800)
     );
-    console.log(Frequencies);
 
     useEffect(() => {
         scrollIntoViewById("home", { behavior: "auto" });
