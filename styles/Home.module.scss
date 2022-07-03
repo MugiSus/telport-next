@@ -158,6 +158,26 @@
     }
 }
 
+.caller, .listener {
+    .modeSelector {
+        height: 2.4rem;
+        margin: 2rem 0 1.6rem;
+    }
+    
+    .textarea {
+        resize: none;
+        border: none;
+        outline: none;
+        border-radius: 0.4rem;
+        padding: 0.8rem;
+        font-size: 1.2rem;
+        width: 80%;
+        height: 100%;
+        font-family: 'Inter';
+        font-weight: 300;
+    }
+}
+
 .caller {
     .textarea {
         color: var(--color-green-6);
@@ -178,20 +198,6 @@
             color: var(--color-green-3);
         }
     }
-}
-
-.textarea {
-    resize: none;
-    border: none;
-    outline: none;
-    border-radius: 0.4rem;
-    padding: 0.8rem;
-    font-size: 1.2rem;
-    margin-top: 2rem;
-    width: 80%;
-    height: 100%;
-    font-family: 'Inter';
-    font-weight: 300;
 }
 
 .callerVisualizer, .listenerVisualizer {
