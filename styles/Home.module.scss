@@ -18,6 +18,8 @@
         max-width: 100vw;
         position: relative;
         display: flex;
+        justify-content: center;
+        align-items: center;
         flex-flow: column;
         flex: none;
         scroll-snap-align: center;
@@ -124,11 +126,33 @@
     }
 }
 
-.callerVisualizer, .listenerVisualizer {
+.buttonsGroup {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    row-gap: 1rem;
+    column-gap: 1.4rem;
+    width: 90%;
 
+    .buttonContainer {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.6rem;
+
+        .buttonLabel {
+            height: 1.2rem;
+        }
+        
+        .button {
+            height: 4rem;
+        }
+    }
+}
+
+.callerVisualizer, .listenerVisualizer {
     .visualizerGrid {
         display: grid;
         align-items: center;

@@ -41,6 +41,16 @@ export default function Home() {
                 <div className={`${styles.window} ${styles.caller}`} id="caller" onClick={scrollIntoThis}>
                     <WindowArrow htmlFor="caller-visualizer" isLeftward={true} />
                     <WindowArrow htmlFor="home" />
+                    <div className={styles.buttonsGroup}>
+                        <div className={styles.buttonContainer}>
+                            <img className={styles.buttonLabel} src={"./svg/caller-label-tuning.svg"} alt="caller-label-tuning" />
+                            <img className={styles.button} src={"./svg/caller-button-tuning.svg"} alt="caller-button-tuning" />
+                        </div>
+                        <div className={styles.buttonContainer}>
+                            <img className={styles.buttonLabel} src={"./svg/caller-label-call.svg"} alt="caller-label-call" />
+                            <img className={styles.button} src={"./svg/caller-button-call.svg"} alt="caller-button-call" />
+                        </div>
+                    </div>
                 </div>
                 <div className={`${styles.window} ${styles.home}`} id="home">
                     <div className={styles.callerLink} onClick={() => scrollIntoViewById("caller")}>
@@ -49,7 +59,7 @@ export default function Home() {
                         <div className={styles.linkArrowContainer}>
                             {
                                 [...Array(5).keys()].map(index => (
-                                    <img key={index} className={styles.linkArrow} src={"./svg/home-call-arrow.svg"} alt="listen-arrow"/>
+                                    <img key={index} className={styles.linkArrow} src={"./svg/home-call-arrow.svg"} alt="call-arrow" />
                                 ))
                             }
                         </div>
@@ -60,7 +70,7 @@ export default function Home() {
                         <div className={styles.linkArrowContainer}>
                             {
                                 [...Array(5).keys()].map(index => (
-                                    <img key={index} className={styles.linkArrow} src={"./svg/home-listen-arrow.svg"} alt="listen-arrow"/>
+                                    <img key={index} className={styles.linkArrow} src={"./svg/home-listen-arrow.svg"} alt="listen-arrow" />
                                 ))
                             }
                         </div>
@@ -69,6 +79,16 @@ export default function Home() {
                 <div className={`${styles.window} ${styles.listener}`} id="listener" onClick={scrollIntoThis}>
                     <WindowArrow htmlFor="home" isLeftward={true} />
                     <WindowArrow htmlFor="listener-visualizer" />
+                    <div className={styles.buttonsGroup}>
+                        <div className={styles.buttonContainer}>
+                            <img className={styles.buttonLabel} src={"./svg/listener-label-tuning.svg"} alt="listener-label-tuning" />
+                            <img className={styles.button} src={"./svg/listener-button-tuning.svg"} alt="listener-button-tuning" />
+                        </div>
+                        <div className={styles.buttonContainer}>
+                            <img className={styles.buttonLabel} src={"./svg/listener-label-listen.svg"} alt="listener-label-listen" />
+                            <img className={styles.button} src={"./svg/listener-button-listen.svg"} alt="listener-button-listen" />
+                        </div>
+                    </div>
                 </div>
                 <div className={`${styles.window} ${styles.listenerVisualizer}`} id="listener-visualizer" onClick={scrollIntoThis}>
                     <WindowArrow htmlFor="listener" isLeftward={true}/>
