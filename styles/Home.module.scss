@@ -131,9 +131,9 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    margin-top: 2rem;
+    margin-top: 1.4rem;
     row-gap: 1rem;
-    column-gap: 1.4rem;
+    column-gap: 1.6rem;
     width: 90%;
 
     .buttonContainer {
@@ -159,13 +159,13 @@
 }
 
 .caller, .listener {
-    padding: 2rem 0;
+    padding: 2.4rem 0;
 
     .modeSelector {
         height: 2.4rem;
         margin-bottom: 1.6rem;
     }
-    
+
     .textarea {
         resize: none;
         border: none;
@@ -209,7 +209,7 @@
         justify-content: center;
         grid-template-columns: repeat(auto-fill, 2.4rem);
         grid-gap: 0.6rem;
-        width: 90%;
+        width: 85%;
         max-height: 90%;
         overflow-y: scroll;
         scrollbar-width: none;
