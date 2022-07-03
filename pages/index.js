@@ -41,6 +41,7 @@ export default function Home() {
                 <div className={`${styles.window} ${styles.caller}`} id="caller" onClick={scrollIntoThis}>
                     <WindowArrow htmlFor="caller-visualizer" isLeftward={true} />
                     <WindowArrow htmlFor="home" />
+                    <textarea className={styles.textarea} placeholder="Type something you want to call..." />
                     <div className={styles.buttonsGroup}>
                         <div className={styles.buttonContainer}>
                             <img className={styles.buttonLabel} src={"./svg/caller-label-tuning.svg"} alt="caller-label-tuning" />
@@ -79,6 +80,7 @@ export default function Home() {
                 <div className={`${styles.window} ${styles.listener}`} id="listener" onClick={scrollIntoThis}>
                     <WindowArrow htmlFor="home" isLeftward={true} />
                     <WindowArrow htmlFor="listener-visualizer" />
+                    <textarea className={styles.textarea} placeholder="Something listened will appear here..." />
                     <div className={styles.buttonsGroup}>
                         <div className={styles.buttonContainer}>
                             <img className={styles.buttonLabel} src={"./svg/listener-label-tuning.svg"} alt="listener-label-tuning" />
