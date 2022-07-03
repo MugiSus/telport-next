@@ -38,6 +38,7 @@ export default function Home() {
                         }
                     </div>
                 </div>
+
                 <div className={`${styles.window} ${styles.caller}`} id="caller" onClick={scrollIntoThis}>
                     <WindowArrow htmlFor="caller-visualizer" isLeftward={true} />
                     <WindowArrow htmlFor="home" />
@@ -54,6 +55,7 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
+
                 <div className={`${styles.window} ${styles.home}`} id="home">
                     <div className={styles.callerLink} onClick={() => scrollIntoViewById("caller")}>
                         <img className={styles.linkBackgroundIcon} src={`./svg/home-call-icon.svg`} alt="caller-link-background" />
@@ -78,6 +80,7 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
+
                 <div className={`${styles.window} ${styles.listener}`} id="listener" onClick={scrollIntoThis}>
                     <WindowArrow htmlFor="home" isLeftward={true} />
                     <WindowArrow htmlFor="listener-visualizer" />
@@ -94,6 +97,7 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
+                
                 <div className={`${styles.window} ${styles.listenerVisualizer}`} id="listener-visualizer" onClick={scrollIntoThis}>
                     <WindowArrow htmlFor="listener" isLeftward={true}/>
                     <div className={styles.visualizerGrid}>
