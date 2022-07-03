@@ -6,7 +6,7 @@ import WindowArrow from '../components/windowArrow.js'
 import { useEffect } from 'react'
 
 import { scrollIntoViewById, scrollIntoThis } from '../components/sources/scrollIntoView'
-// import { Telport } from '../components/sources/telport'
+import { Init as InitTelport } from '../components/sources/telport'
 
 export default function Home() {
 
@@ -14,8 +14,12 @@ export default function Home() {
         [...new Array(128).keys()].map(i => i * 80 + 800)
     );
 
+    InitTelport();
+
     useEffect(() => {
-        scrollIntoViewById("home", { behavior: "auto" });
+        if (typeof window !== "undefined") {
+            scrollIntoViewById("home", { behavior: "auto" });
+        }
     }, []);
 
     return (
@@ -29,6 +33,7 @@ export default function Home() {
             <main className={styles.main}>
                 <div className={`${styles.window} ${styles.callerVisualizer}`} id="caller-visualizer" onClick={scrollIntoThis}>
                     <WindowArrow htmlFor="caller" />
+                    
                     <div className={styles.visualizerGrid}>
                         {
                             Array.from(Frequencies).map((frequency, index) => (
@@ -43,7 +48,8 @@ export default function Home() {
                 <div className={`${styles.window} ${styles.caller}`} id="caller" onClick={scrollIntoThis}>
                     <WindowArrow htmlFor="caller-visualizer" isLeftward={true} />
                     <WindowArrow htmlFor="home" />
-                    {/* <img className={styles.modeSelector} src={"./svg/caller-button-modeselector-text.svg"} alt="caller-button-modeselector" /> */}
+
+                    <img className={styles.modeSelector} src={"./svg/caller-button-modeselector-text.svg"} alt="caller-button-modeselector" />
                     <textarea className={styles.textarea} placeholder="Type something you want to call..." />
                     <div className={styles.buttonsGroup}>
                         <div className={styles.buttonContainer}>
@@ -69,6 +75,7 @@ export default function Home() {
                             }
                         </div>
                     </div>
+
                     <div className={styles.listenerLink} onClick={() => scrollIntoViewById("listener")}>
                         <img className={styles.linkBackgroundIcon} src={`./svg/home-listen-icon.svg`} alt="caller-link-background" />
                         <img className={styles.linkTitle} src={"./svg/home-listen-title-ja.svg"} alt="listen-title" />
@@ -85,7 +92,8 @@ export default function Home() {
                 <div className={`${styles.window} ${styles.listener}`} id="listener" onClick={scrollIntoThis}>
                     <WindowArrow htmlFor="home" isLeftward={true} />
                     <WindowArrow htmlFor="listener-visualizer" />
-                    {/* <img className={styles.modeSelector} src={"./svg/listener-button-modeselector-text.svg"} alt="listener-button-modeselector" /> */}
+
+                    <img className={styles.modeSelector} src={"./svg/listener-button-modeselector-text.svg"} alt="listener-button-modeselector" />
                     <textarea className={styles.textarea} placeholder="Something heard will appear over here..." readOnly/>
                     <div className={styles.buttonsGroup}>
                         <div className={styles.buttonContainer}>
