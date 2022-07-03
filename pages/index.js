@@ -5,7 +5,8 @@ import styles from '../styles/Home.module.scss'
 import WindowArrow from '../components/windowArrow.js'
 import { useEffect } from 'react'
 
-import { scrollIntoViewById, scrollIntoThis } from '../components/sources/scrollIntoView.js'
+import { scrollIntoViewById, scrollIntoThis } from '../components/sources/scrollIntoView'
+// import { Telport } from '../components/sources/telport'
 
 export default function Home() {
 
