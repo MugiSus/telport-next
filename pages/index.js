@@ -82,7 +82,7 @@ export default function Home() {
                     <WindowArrow htmlFor="home" isLeftward={true} />
                     <WindowArrow htmlFor="listener-visualizer" />
                     {/* <img className={styles.modeSelector} src={"./svg/listener-button-modeselector-text.svg"} alt="listener-button-modeselector" /> */}
-                    <textarea className={styles.textarea} placeholder="Something listened will appear here..." />
+                    <textarea className={styles.textarea} placeholder="Something heard will appear here..." readOnly/>
                     <div className={styles.buttonsGroup}>
                         <div className={styles.buttonContainer}>
                             <img className={styles.buttonLabel} src={"./svg/listener-label-tuning.svg"} alt="listener-label-tuning" />
