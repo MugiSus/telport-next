@@ -41,7 +41,7 @@ export default function Home() {
                 <div className={`${styles.window} ${styles.caller}`} id="caller" onClick={scrollIntoThis}>
                     <WindowArrow htmlFor="caller-visualizer" isLeftward={true} />
                     <WindowArrow htmlFor="home" />
-                    <img className={styles.modeSelector} src={"./svg/caller-button-modeselector-text.svg"} alt="caller-button-modeselector" />
+                    {/* <img className={styles.modeSelector} src={"./svg/caller-button-modeselector-text.svg"} alt="caller-button-modeselector" /> */}
                     <textarea className={styles.textarea} placeholder="Type something you want to call..." />
                     <div className={styles.buttonsGroup}>
                         <div className={styles.buttonContainer}>
@@ -81,7 +81,7 @@ export default function Home() {
                 <div className={`${styles.window} ${styles.listener}`} id="listener" onClick={scrollIntoThis}>
                     <WindowArrow htmlFor="home" isLeftward={true} />
                     <WindowArrow htmlFor="listener-visualizer" />
-                    <img className={styles.modeSelector} src={"./svg/listener-button-modeselector-text.svg"} alt="listener-button-modeselector" />
+                    {/* <img className={styles.modeSelector} src={"./svg/listener-button-modeselector-text.svg"} alt="listener-button-modeselector" /> */}
                     <textarea className={styles.textarea} placeholder="Something listened will appear here..." />
                     <div className={styles.buttonsGroup}>
                         <div className={styles.buttonContainer}>
