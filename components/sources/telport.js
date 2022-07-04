@@ -6,8 +6,8 @@ const Telport = class {
     }
 }
 
-const InitTelport = () => useEffect(() => {
-
+const InitTelport = (frequencies) => useEffect(() => {
+    
 }, [])
 
 export { InitTelport }

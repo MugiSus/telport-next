@@ -13,6 +13,11 @@ export default function Home() {
     const Frequencies = new Uint16Array(
         [...new Array(128).keys()].map(i => i * 80 + 800)
     );
+    const visualizerItemsHtml = Array.from(Frequencies).map((frequency, index) => (
+        <div key={index} className={`${styles.visualizerItem} ${frequency >= 10000 ? styles.condensed : ""}`}>
+            {frequency}
+        </div>
+    ))
 
     InitTelport(Frequencies);
 
@@ -35,13 +40,7 @@ export default function Home() {
                     <WindowArrow htmlFor="caller" />
 
                     <div className={styles.visualizerGrid}>
-                        {
-                            Array.from(Frequencies).map((frequency, index) => (
-                                <div key={index} className={styles.visualizerItem}>
-                                    {frequency}
-                                </div>
-                            ))
-                        }
+                        {visualizerItemsHtml}
                     </div>
                 </div>
 
@@ -110,13 +109,7 @@ export default function Home() {
                 <div className={`${styles.window} ${styles.listenerVisualizer}`} id="listener-visualizer" onClick={scrollIntoThis}>
                     <WindowArrow htmlFor="listener" isLeftward={true}/>
                     <div className={styles.visualizerGrid}>
-                        {
-                            Array.from(Frequencies).map((frequency, index) => (
-                                <div key={index} className={styles.visualizerItem}>
-                                    {frequency}
-                                </div>
-                            ))
-                        }
+                        {visualizerItemsHtml}
                     </div>
                 </div>
             </main>
