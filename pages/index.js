@@ -6,7 +6,7 @@ import WindowArrow from '../components/windowArrow.js'
 import { useEffect } from 'react'
 
 import { scrollIntoViewById, scrollIntoThis } from '../components/sources/scrollIntoView'
-import { Init as InitTelport } from '../components/sources/telport'
+import { InitTelport } from '../components/sources/telport'
 
 export default function Home() {
 
@@ -14,7 +14,7 @@ export default function Home() {
         [...new Array(128).keys()].map(i => i * 80 + 800)
     );
 
-    InitTelport();
+    InitTelport(Frequencies);
 
     useEffect(() => {
         if (typeof window !== "undefined") {
@@ -33,7 +33,7 @@ export default function Home() {
             <main className={styles.main}>
                 <div className={`${styles.window} ${styles.callerVisualizer}`} id="caller-visualizer" onClick={scrollIntoThis}>
                     <WindowArrow htmlFor="caller" />
-                    
+
                     <div className={styles.visualizerGrid}>
                         {
                             Array.from(Frequencies).map((frequency, index) => (
