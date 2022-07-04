@@ -25,7 +25,7 @@ const InitTelport = (frequencies) => useEffect(() => {
         return oscillatorNode;
     });
     
-    document.addEventListener("click", () => oscillatorNodes[20].start());
+    // document.addEventListener("click", () => oscillatorNodes[20].start());
 
 }, [])
 
