@@ -6,7 +6,7 @@ import WindowArrow from '../components/windowArrow.js'
 import { useEffect } from 'react'
 
 import { scrollIntoViewById, scrollIntoThis } from '../components/sources/scrollIntoView'
-import { InitTelport } from '../components/sources/telport'
+import { useTelport } from '../components/sources/telport'
 
 export default function Home() {
 
@@ -19,7 +19,7 @@ export default function Home() {
         </div>
     ))
 
-    InitTelport(Frequencies);
+    useTelport(Frequencies);
 
     useEffect(() => {
         if (typeof window !== "undefined") {
