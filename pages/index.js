@@ -6,26 +6,36 @@ import WindowArrow from '../components/windowArrow.js'
 import { useEffect } from 'react'
 
 import { scrollIntoViewById, scrollIntoThis } from '../components/sources/scrollIntoView'
-import { useTelport } from '../components/sources/telport'
+import Telport from '../components/sources/telport'
 
 export default function Home() {
-
-    const Frequencies = new Uint16Array(
-        [...new Array(128).keys()].map(i => i * 80 + 800)
-    );
-    const visualizerItemsHtml = Array.from(Frequencies).map((frequency, index) => (
-        <div key={index} className={`${styles.visualizerItem} ${frequency >= 10000 ? styles.condensed : ""}`}>
-            {frequency}
-        </div>
-    ))
-
-    useTelport(Frequencies);
-
+    const telport = new Telport({
+        fftSize: 1024, 
+        start: 24,
+        amount: 40,
+        step: 2,
+        interval: 100
+    });
+    
     useEffect(() => {
         if (typeof window !== "undefined") {
             scrollIntoViewById("home", { behavior: "auto" });
         }
     }, []);
+    
+    const visualizerItemsHtml = Array.from(telport.frequencies).map((frequency, index) => (
+        <div key={index} className={`${styles.visualizerItem} ${frequency >= 10000 ? styles.condensed : ""}`}>
+            {frequency}
+        </div>
+    ))
+
+    const callText = () => {
+        const text = document.querySelector(`.${styles.caller} .${styles.textarea}`).value;
+
+        telport.callText(text).then(() => {
+            console.log("request sent.");
+        });
+    }
 
     return (
         <div className={styles.container}>
@@ -51,11 +61,11 @@ export default function Home() {
                     <img className={styles.modeSelector} src={"./svg/caller-button-modeselector-text.svg"} alt="caller-button-modeselector" />
                     <textarea className={styles.textarea} placeholder="Type something you want to call..." />
                     <div className={styles.buttonsGroup}>
-                        <div className={styles.buttonContainer}>
+                        <div className={styles.buttonContainer} onClick={() => telport.callTuner()}>
                             <img className={styles.buttonLabel} src={"./svg/caller-label-tuning.svg"} alt="caller-label-tuning" />
                             <img className={styles.button} src={"./svg/caller-button-tuning.svg"} alt="caller-button-tuning" />
                         </div>
-                        <div className={styles.buttonContainer}>
+                        <div className={styles.buttonContainer} onClick={callText}>
                             <img className={styles.buttonLabel} src={"./svg/caller-label-call.svg"} alt="caller-label-call" />
                             <img className={styles.button} src={"./svg/caller-button-call.svg"} alt="caller-button-call" />
                         </div>
