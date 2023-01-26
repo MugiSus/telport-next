@@ -25,7 +25,7 @@ const oscillator = class {
 	}
 }
 
-const Telport = class {
+const TelportEnvironment = class {
 	constructor({ fftSize, start, amount, step = 2, interval = 100 }) {
 		if (amount % 8 > 0) {
 			throw new Error("[TELPort] The amount must be a multiple of 8");
@@ -135,7 +135,7 @@ const Telport = class {
 			const encoder = new TextEncoder();
 			const uint8Array = encoder.encode(text);
 	
-			this.callStarter(0, uint8Array.length, 500).then(() => this.call(uint8Array));
+			this.callStarter(0, uint8Array.length, 500).then(() => this.call(uint8Array)).then(resolve);
 		});
 	}
 
@@ -155,4 +155,4 @@ const Telport = class {
 	}
 }
 
-export default Telport;
+export default TelportEnvironment;

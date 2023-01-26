@@ -6,13 +6,13 @@ import WindowArrow from '../components/windowArrow.js'
 import { useEffect } from 'react'
 
 import { scrollIntoViewById, scrollIntoThis } from '../components/sources/scrollIntoView'
-import Telport from '../components/sources/telport'
+import TelportEnvironment from '../components/sources/telport'
 
 export default function Home() {
-	const telport = new Telport({
+	const telport = new TelportEnvironment({
 		fftSize: 1024, 
 		start: 24,
-		amount: 40,
+		amount: 48,
 		step: 2,
 		interval: 100
 	});
